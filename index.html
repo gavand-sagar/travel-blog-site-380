@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+        html {
+            font-family: Arial, Helvetica, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            box-sizing: border-box;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: black;
+            color: white;
+            height: 40px;
+            padding-left: 15px;
+            padding-right: 15px;
+            position: fixed;
+            left: 0;
+            right: 0;
+            z-index: 10;
+        }
+
+        .header-left {}
+
+        .header-right {}
+
+        .white-link {
+            color: white;
+            text-decoration: none;
+        }
+
+        .white-link:visited {
+            color: white;
+        }
+
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 40px;
+            z-index: 10;
+            height: 80px;
+            border-bottom: 1px solid rgb(151, 144, 144);
+        }
+
+        .nav-bar .logo-text {
+            color: rgb(17, 195, 17);
+            padding-left: 15px;
+        }
+
+        .nav-bar-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        .nav-link.active {
+            background-color: rgba(255, 255, 255, 0.166);
+            color: rgb(17, 195, 17);
+            border-bottom: 2px solid rgb(17, 195, 17);
+        }
+
+        .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.166);
+        }
+
+        .main-container {
+            display: flex;
+            align-items: center;
+            height: 1000px;
+            justify-content: center;
+            position: relative;
+            color: white;
+        }
+
+        .bg-img {
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            filter: brightness(0.4);
+        }
+
+        .fakebox{
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-radius: 25px;
+            height: 50px;
+            align-items: center;
+            padding-left: 25px;
+        }
+
+        .fakebox>input{
+            flex: 1;
+            outline: none;
+            border: none;
+        }
+        .fakebox>button{
+            width: 100px;
+            border: none;
+            color: white;
+            height: 40px;
+            border-radius: 20px;
+            background-color: green;
+        }
+
+        /* mobile css */
+        @media screen and (max-width:767px) {
+            .header {
+                display: none;
+            }
+
+            .nav-bar {
+                top: 0
+            }
+
+            .bg-img {
+                height: 100%;
+                width: auto;
+            }
+
+            .main-container {
+                height: 600px;
+            }
+
+            .nav-bar-right {
+                flex-direction: column;
+                position: fixed;
+                background-color: rgb(54, 54, 54);
+                right: 0;
+                top: 80px;
+                align-items: start;
+            }
+
+            .nav-link {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left">
+            <i class="fa-solid fa-location-dot"></i>
+            Mumbai, India
+            <a target="_blank" class="white-link" href="tel:+22 2790954567">
+                <i class="fa-solid fa-phone"></i>
+                +22 2790954567
+            </a>
+            <a class="white-link" href="mailto:query@livetrip.com">
+                <i class="fa-regular fa-envelope"></i>
+                query@livetrip.com
+            </a>
+        </div>
+        <div class="header-right">
+            <a target="_blank" class="white-link" href="https://fontawesome.com/search?q=email&o=r&m=free"><i
+                    class="fa-brands fa-instagram"></i></a>
+            <i class="fa-brands fa-twitter"></i>
+        </div>
+    </header>
+    <nav class="nav-bar">
+        <div class="nav-bar-left">
+            <h1 class="logo-text">LiveTrip</h1>
+        </div>
+        <div class="nav-bar-right">
+            <a class="white-link nav-link " href="#">HOME</a>
+            <a class="white-link nav-link active" href="#about-section">ABOUT</a>
+            <a class="white-link nav-link " href="#gallery-section">GALLERY</a>
+            <a class="white-link nav-link " href="#destination-section">DESTINATION</a>
+        </div>
+    </nav>
+    <main class="main-container">
+        <img class="bg-img" src="./background-4.jpg">
+        <div class="search-box">
+            <h1>Tell us where do you want to go.</h1>
+            <div class="fakebox">
+                <input placeholder="e.g. Goa"/>
+                <button>Search</button>
+            </div>
+        </div>
+    </main>
+    <section id="about-section" class="about-section">
+        <h1>ABOUT</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt natus sunt expedita, at sed velit
+            voluptatem nobis praesentium, dolore harum corporis? Tenetur asperiores necessitatibus eveniet nisi suscipit
+            nihil expedita quasi repellat ex in, nostrum magni nulla deserunt temporibus! Facere rem iusto quasi quaerat
+            quod reprehenderit earum modi? Sint cum recusandae molestias illum, esse blanditiis, quia eveniet
+            perferendis quasi necessitatibus asperiores amet animi consectetur. Reiciendis similique labore enim dolorum
+            atque excepturi doloremque deleniti, voluptatem sit, nostrum ratione porro et magnam necessitatibus
+            cupiditate consectetur est corporis nobis mollitia asperiores reprehenderit, laboriosam placeat! Non soluta
+            ad consequuntur iure quia commodi, sequi illo vero?</p>
+    </section>
+    <section id="destination-section" class="destination-section">
+        <h1>DESTINATION</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt natus sunt expedita, at sed velit
+            voluptatem nobis praesentium, dolore harum corporis? Tenetur asperiores necessitatibus eveniet nisi suscipit
+            nihil expedita quasi repellat ex in, nostrum magni nulla deserunt temporibus! Facere rem iusto quasi quaerat
+            quod reprehenderit earum modi? Sint cum recusandae molestias illum, esse blanditiis, quia eveniet
+            perferendis quasi necessitatibus asperiores amet animi consectetur. Reiciendis similique labore enim dolorum
+            atque excepturi doloremque deleniti, voluptatem sit, nostrum ratione porro et magnam necessitatibus
+            cupiditate consectetur est corporis nobis mollitia asperiores reprehenderit, laboriosam placeat! Non soluta
+            ad consequuntur iure quia commodi, sequi illo vero?</p>
+
+    </section>
+    <section id="gallery-section" class="gallery-section">
+        <h1>GALLERY</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt natus sunt expedita, at sed velit
+            voluptatem nobis praesentium, dolore harum corporis? Tenetur asperiores necessitatibus eveniet nisi suscipit
+            nihil expedita quasi repellat ex in, nostrum magni nulla deserunt temporibus! Facere rem iusto quasi quaerat
+            quod reprehenderit earum modi? Sint cum recusandae molestias illum, esse blanditiis, quia eveniet
+            perferendis quasi necessitatibus asperiores amet animi consectetur. Reiciendis similique labore enim dolorum
+            atque excepturi doloremque deleniti, voluptatem sit, nostrum ratione porro et magnam necessitatibus
+            cupiditate consectetur est corporis nobis mollitia asperiores reprehenderit, laboriosam placeat! Non soluta
+            ad consequuntur iure quia commodi, sequi illo vero?</p>
+
+    </section>
+
+
+    <script>
+       window.addEventListener('scroll',onscroll);
+
+       function onscroll(){
+            let navBar = document.querySelector('.nav-bar');
+            if(window.scrollY > 100){
+                navBar.style.backgroundColor = 'gray';
+            }else{
+                navBar.style.backgroundColor = 'unset';
+            }            
+       }
+    </script>
+</body>
+
+</html>
